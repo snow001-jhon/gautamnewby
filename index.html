@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#071326">
+<title>TRADE WITH MUNAF</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#071326;
+  color:#fff;
+  padding:12px;
+}
+
+.container{
+  width:100%;
+  max-width:390px;
+  margin:auto;
+}
+
+.live{
+  text-align:center;
+  background:#10233a;
+  border:1px solid #28435f;
+  border-radius:8px;
+  padding:9px;
+  font-size:11px;
+  color:#dce9f8;
+  margin-bottom:17px;
+}
+
+.dot{
+  display:inline-block;
+  width:6px;
+  height:6px;
+  background:#24d477;
+  border-radius:50%;
+  margin-right:5px;
+}
+
+.profile{
+  text-align:center;
+  padding:5px 5px 15px;
+}
+
+.photo{
+  width:82px;
+  height:82px;
+  padding:3px;
+  margin:0 auto 12px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#ffc857,#fff2b0,#d18b1b);
+}
+
+.photo img{
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.photo-input{
+  display:block;
+  font-size:10px;
+  max-width:200px;
+  margin:0 auto 12px;
+}
+
+h1{
+  font-size:20px;
+  line-height:1.3;
+  margin-bottom:7px;
+}
+
+.subtitle{
+  color:#ffc857;
+  font-size:12px;
+  font-weight:bold;
+  margin-bottom:8px;
+}
+
+.rating{
+  color:#ffc857;
+  font-size:11px;
+  margin-bottom:17px;
+}
+
+.rating span{
+  color:#c7d2e0;
+}
+
+/* Premium Telegram Join Button */
+.join{
+  display:block;
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  text-align:center;
+  padding:14px 8px;
+  border-radius:9px;
+  background:linear-gradient(
+    100deg,#12b960,#2be98a,#13bd68
+  );
+  color:#032719;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:.25px;
+  margin:10px 0;
+  border:1px solid #55f5a1;
+  box-shadow:
+    0 0 8px #21e27b40,
+    0 4px 16px #20cf7530;
+  transition:transform .2s,box-shadow .2s;
+}
+
+/* Bright moving shine */
+.join::before{
+  content:"";
+  position:absolute;
+  top:-30%;
+  left:-100%;
+  width:38%;
+  height:160%;
+  background:linear-gradient(
+    100deg,
+    transparent 0%,
+    rgba(255,255,255,.12) 20%,
+    rgba(255,255,255,.95) 50%,
+    rgba(255,255,255,.18) 80%,
+    transparent 100%
+  );
+  transform:skewX(-25deg);
+  animation:premiumShine 2s ease-in-out infinite;
+  pointer-events:none;
+  z-index:-1;
+}
+
+@keyframes premiumShine{
+  0%{
+    left:-100%;
+  }
+  65%,100%{
+    left:150%;
+  }
+}
+
+.join:active{
+  transform:scale(.98);
+  box-shadow:0 0 18px #2be98a80;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:7px;
+  margin:17px 0;
+}
+
+.stat{
+  background:#11223a;
+  border:1px solid #263d59;
+  border-radius:8px;
+  padding:12px 3px;
+  text-align:center;
+}
+
+.stat strong{
+  display:block;
+  color:#ffc857;
+  font-size:17px;
+  margin-bottom:5px;
+}
+
+.stat span{
+  color:#c4d0df;
+  font-size:10px;
+}
+
+.card{
+  background:#101f36;
+  border:1px solid #263d59;
+  border-radius:10px;
+  padding:15px 12px;
+  margin-bottom:13px;
+}
+
+h2{
+  font-size:16px;
+  line-height:1.4;
+  text-align:center;
+  margin-bottom:10px;
+}
+
+.description{
+  text-align:center;
+  color:#b8c6d8;
+  font-size:11px;
+  line-height:1.7;
+  margin-bottom:14px;
+}
+
+.notice{
+  background:#392b18;
+  border:1px solid #6b4c21;
+  color:#ffd68a;
+  text-align:center;
+  border-radius:7px;
+  padding:10px 7px;
+  font-size:11px;
+  line-height:1.5;
+  margin-bottom:13px;
+}
+
+.features{
+  list-style:none;
+  margin:15px 0;
+}
+
+.features li{
+  display:flex;
+  gap:8px;
+  font-size:11px;
+  color:#e2eaf5;
+  line-height:1.5;
+  margin-bottom:11px;
+}
+
+.check{
+  color:#24d477;
+  font-weight:bold;
+}
+
+.tags{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:6px;
+  margin:14px 0;
+}
+
+.tags span{
+  font-size:9px;
+  padding:7px 8px;
+  border-radius:20px;
+  background:#172a40;
+  border:1px solid #2c435a;
+}
+
+.note{
+  text-align:center;
+  color:#9eafc3;
+  font-size:10px;
+  line-height:1.7;
+  margin-top:13px;
+}
+
+.disclaimer{
+  background:#0b1728;
+  border:1px solid #24354c;
+  padding:11px;
+  border-radius:8px;
+  color:#94a5ba;
+  font-size:10px;
+  line-height:1.7;
+}
+
+.disclaimer strong{
+  color:#dce5ef;
+}
+
+/* Adsbig Agency Credit */
+.agency-credit{
+  text-align:center;
+  margin-top:17px;
+  padding:13px 8px;
+  border-top:1px solid #263b54;
+  font-size:11px;
+  color:#9eafc3;
+  line-height:1.8;
+}
+
+.agency-credit a{
+  color:#ffc857;
+  text-decoration:none;
+  font-weight:bold;
+  transition:color .2s;
+}
+
+.agency-credit a:hover{
+  color:#fff1b5;
+  text-decoration:underline;
+}
+
+footer{
+  text-align:center;
+  font-size:10px;
+  color:#74869e;
+  padding:8px 0 5px;
+}
+
+@media(max-width:360px){
+  body{padding:9px;}
+  h1{font-size:19px;}
+  .card{padding:13px 10px;}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .join::before{
+    animation:none;
+  }
+}
+</style>
+</head>
+
+<body>
+<main class="container">
+
+  <div class="live">
+    <span class="dot"></span>
+    5,947 traders online now
+  </div>
+
+  <section class="profile">
+
+    <div class="photo">
+      <img id="logo.jpg"
+      src="logo.jpg"
+      alt="Profile photo">
+    </div>
+
+    <input
+      class="photo-input"
+      type="file"
+      id="photoInput"
+      accept="image/*"
+      aria-label="Choose profile photo">
+
+    <h1>TRADE WITH MUNAF</h1>
+
+    <p class="subtitle">
+      🏆 India's No.1 Stock Market Channel
+    </p>
+
+    <div class="rating">
+      ★★★★★ <span>4.9/5 (2,440 reviews)</span>
+    </div>
+
+    <a class="join"
+    href="https://t.me/+CMQENtXcrqc2YzM1"
+    target="_blank" rel="noopener noreferrer">
+      ✈ JOIN TELEGRAM CHANNEL →
+    </a>
+
+  </section>
+
+  <section class="stats">
+
+    <div class="stat">
+      <strong>50K+</strong>
+      <span>Members</span>
+    </div>
+
+    <div class="stat">
+      <strong>5+ Yrs</strong>
+      <span>Experience</span>
+    </div>
+
+    <div class="stat">
+      <strong>95%</strong>
+      <span>Accuracy</span>
+    </div>
+
+  </section>
+
+  <section class="card">
+
+    <h2>Free NIFTY, BANKNIFTY &amp; SENSEX Updates</h2>
+
+    <p class="description">
+      Join our Telegram channel for market updates,
+      stock market information and educational analysis.
+    </p>
+
+    <div class="notice">
+      🔥 Join our Telegram channel for free updates!
+    </div>
+
+    <a class="join"
+    href="https://t.me/+CMQENtXcrqc2YzM1"
+    target="_blank" rel="noopener noreferrer">
+      ✈ JOIN TELEGRAM CHANNEL →
+    </a>
+
+    <ul class="features">
+      <li>
+        <span class="check">✓</span>
+        <span>Daily Nifty &amp; BankNifty Levels</span>
+      </li>
+
+      <li>
+        <span class="check">✓</span>
+        <span>Stock Market Learning &amp; Analysis</span>
+      </li>
+
+      <li>
+        <span class="check">✓</span>
+        <span>Daily Market Information</span>
+      </li>
+
+      <li>
+        <span class="check">✓</span>
+        <span>Telegram Market Updates</span>
+      </li>
+    </ul>
+
+    <div class="tags">
+      <span>✓ Free to Join</span>
+      <span>✓ Market Education</span>
+      <span>✓ Stock Updates</span>
+    </div>
+
+    <a class="join"
+    href="https://t.me/+CMQENtXcrqc2YzM1"
+    target="_blank" rel="noopener noreferrer">
+      ✈ JOIN NOW — FREE
+    </a>
+
+    <p class="note">
+      Join the channel to receive market updates.
+    </p>
+
+  </section>
+
+  <section class="disclaimer">
+    <strong>Disclaimer:</strong>
+    This channel is for educational purposes only.
+    Stock market trading involves financial risk.
+    No profits or returns are guaranteed. Please make
+    informed decisions before investing.
+  </section>
+
+  <!-- Adsbig Agency Credit -->
+  <div class="agency-credit">
+    Ad managed by
+    <a href="https://t.me/+nTRMAouerik1ZGY1"
+       target="_blank" rel="noopener noreferrer">
+      Adsbig Agency ↗
+    </a>
+  </div>
+
+  <footer>
+    © <span id="year"></span> TRADE WITH MUNAF
+  </footer>
+
+</main>
+
+<script>
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+document.getElementById("photoInput").addEventListener(
+  "change",
+  function(){
+    const file = this.files && this.files[0];
+
+    if(file && file.type.startsWith("image/")){
+      const reader = new FileReader();
+
+      reader.onload = function(e){
+        document.getElementById("profilePhoto").src =
+          e.target.result;
+      };
+
+      reader.readAsDataURL(file);
+    }
+  }
+);
+</script>
+
+</body>
+</html>
